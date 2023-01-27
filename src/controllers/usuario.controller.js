@@ -1,3 +1,6 @@
+class usuarioController {
+
+
 usuario = () => {
 
     app.get('/usuario', (req, res) => {
@@ -7,4 +10,7 @@ usuario = () => {
 
 }
 
-module.exports =  usuario 
+
+}
+
+export default usuario 

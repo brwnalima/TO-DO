@@ -7,4 +7,4 @@ tarefa = () => {
 
 }
 
-module.exports = tarefa
+export default tarefa
