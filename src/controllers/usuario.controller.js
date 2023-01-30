@@ -1,16 +1,13 @@
 class usuarioController {
+    static rotas(app) {
+        // rota pro recurso tarefa
+        app.get('/', usuarioController.listar)
+        // app.get('/usuario', usuarioController.listar)
+    }
 
-
-usuario = () => {
-
-    app.get('/usuario', (req, res) => {
-        res.send(`\t Rota ativada com GET e recurso usuario: 
-    valores de usuario devem ser retornados.`)
-    })
-
-}
-
-
+    static listar(req, res) {
+        res.send('Rotas ativada com GET e recurso usuário: lista de usuário deve ser retornada')
+    }
 }
 
 export default usuarioController
