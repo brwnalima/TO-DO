@@ -1,10 +1,8 @@
-tarefa = () => {
-
-    app.get('/tarefa', (req, res) => {
-        res.send(`\t Rota ativada com GET e recurso tarefa: 
-    valores de tarefa devem ser retornados.`)
-    })
-
+class tarefaController {
+    static rotas(app) {
+        // rota pro recurso tarefa
+        app.get('/')
+    }
 }
 
-export default tarefa
+export default tarefaController

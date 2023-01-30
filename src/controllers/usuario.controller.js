@@ -13,4 +13,4 @@ usuario = () => {
 
 }
 
-export default usuario 
+export default usuarioController
