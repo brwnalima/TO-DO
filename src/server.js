@@ -5,3 +5,5 @@ const port = 3000
 app.listen(port, () => {
     console.log(`Porta: ${port}`)
 })
+
+export default port
