@@ -9,10 +9,13 @@ const app = express()
 app.use(express.json())
 
 // importando os controllers
-import usuarioController from './controllers/usuarioController.js'
-import tarefaController from './controllers/tarefaController.js'
+import usuarioController from './controllers/usuario-controller.js'
+import tarefaController from './controllers/tarefa-controller.js'
+import Usuario from './models/usuario.js'
+import Tarefa from './models/usuario.js'
 
 usuarioController.rotas(app)
 tarefaController.rotas(app)
+
 
 export default app
