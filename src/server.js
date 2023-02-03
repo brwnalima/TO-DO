@@ -1,7 +1,9 @@
 import app from './app'
 
+// escolhendo a porta em que o servidor será aberto
 const port = 3000
 
-app.listen(port, () => {
-    console.log(`Porta: ${port}`)
+// abrindo o servidor na porta escolhida
+app.listen(port, ()=>{
+    console.log(`Server rodando em http://localhost:${port}/`)
 })

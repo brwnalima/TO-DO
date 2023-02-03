@@ -1,15 +1,20 @@
-// importando o packages
-import express from "express"
+// Importando o packages
+import express from 'express'
 
-// instaciando o servidor
+// instanciando o servidor
 const app = express()
 
-// importando os controllers
+// configurando o servidor para receber requisições com o corpo no formato JSON
+// Usando Middleware
+app.use(express.json())
 
-import usuarioController from "./controllers/usuario-controller.js"
-import tarefaController from "./controllers/tarefa-controller.js"
+// importando os controllers
+import usuarioController from './controllers/usuarioController.js'
+import tarefaController from './controllers/tarefaController.js'
 
 usuarioController.rotas(app)
 tarefaController.rotas(app)
+
+// DATA LOG
 
 export default app
