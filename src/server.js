@@ -1,7 +1,7 @@
 import app from './app.js'
 
 // escolhendo a porta em que o servidor será aberto
-const port = 5010
+const port = 3000
 
 // abrindo o servidor na porta escolhida
 app.listen(port, ()=>{
