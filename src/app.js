@@ -15,6 +15,4 @@ import tarefaController from './controllers/tarefaController.js'
 usuarioController.rotas(app)
 tarefaController.rotas(app)
 
-// DATA LOG
-
 export default app
