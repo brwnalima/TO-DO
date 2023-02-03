@@ -1,7 +1,7 @@
 class Tarefa {
-    constructor (titulo, descrição, status) {
+    constructor (titulo, descricao, status) {
         this.titulo = titulo
-        this.descrição = descrição
+        this.descricao = descricao
         this.status = status
     }
 }
