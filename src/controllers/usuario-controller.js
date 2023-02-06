@@ -1,4 +1,4 @@
-import { bdUsuarios } from '../bd.js';
+// import { bdUsuarios } from '../bd.js';
 
 class usuarioController {
     static rotas(app) {
