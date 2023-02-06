@@ -5,5 +5,5 @@ const port = 8000
 
 // abrindo o servidor na porta escolhida
 app.listen(port, ()=>{
-    console.log(`Server rodando em http://localhost:${port}/`)
+    console.log(`Server rodando em: http://localhost:${port}/`)
 })
