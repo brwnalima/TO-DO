@@ -1,4 +1,5 @@
 import Tarefa from '../models/tarefa.js'
+import { bdTarefas } from '../bd.js';
 
 class tarefaController {
     static rotas(app){
@@ -9,11 +10,9 @@ class tarefaController {
     }
 
     static listar(req, res){
-        const tarefa = new Tarefa ('Título da tarefa', 'Descrição da tarefa', 'A fazer', new Date())
-        res.send('Rota ativada com GET e recurso tarefa: lista de tarefas deve ser retornada')
-
-        // mostrando o objeto tarefa no console
-        console.log(tarefa)
+        const tarefa = bdTarefas
+        // devolve a lista de tarefas
+        res.send(tarefa)
     }
 
     static inserir(req, res){

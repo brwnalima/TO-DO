@@ -1,19 +1,19 @@
 import Usuario from '../models/usuario.js'
 import { log } from 'util';
+import { bdUsuarios } from '../bd.js';
 
 class usuarioController {
     static rotas(app) {
          // Rota para o recurso usuario
-         app.get('/usuario', usuarioController.listar)
-         app.post('/usuario', usuarioController.inserir)
+         app.get('/', usuarioController.listar)
+         app.post('/', usuarioController.inserir)
          // /usuario
     }
 
     static listar(req, res) {
-        const usuario = new Usuario ('bruna', '@gmail.com', '123456', new Date())
-        res.send('Rotas ativada com GET e recurso usuário: lista de usuário deve ser retornada')
-
-        console.log(usuario)
+        const usuario = bdUsuarios
+        // devolve a lista de usuarios
+        res.send(usuario)
     }
 
     static inserir(req, res){
@@ -21,6 +21,8 @@ class usuarioController {
         // Console log do corpo da requisição
         console.log(req.body)        
     }
+
+                                                               
 }
 
 export default usuarioController
