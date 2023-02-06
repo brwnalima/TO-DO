@@ -1,4 +1,3 @@
-import Usuario from '../models/usuario.js'
 import { log } from 'util';
 import { bdUsuarios } from '../bd.js';
 

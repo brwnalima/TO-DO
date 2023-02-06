@@ -1,4 +1,3 @@
-import Tarefa from '../models/tarefa.js'
 import { bdTarefas } from '../bd.js';
 
 class tarefaController {
