@@ -1,4 +1,3 @@
-import { log } from 'util';
 import { bdUsuarios } from '../bd.js';
 
 class usuarioController {
