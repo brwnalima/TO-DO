@@ -13,6 +13,12 @@ bdUsuarios.push(usuario)
 const usuario2 = new Usuario("Juan Luan Gustavo Ribeiro", "juan.luan.ribeiro@carubelli.com.br", "456")
 bdUsuarios.push(usuario2)
 
+const usuario3 = new Usuario("Gael Francisco Fernandes", "gaelfranciscofernandes@defensoria.sp.gov.br","456")
+bdUsuarios.push(usuario3)
+
+const usuario4 = new Usuario("Juliana Fernanda Alice Nunes", "juliana-nunes84@ideiaviva.com.br","456")
+bdUsuarios.push(usuario4)
+
 // cria um obj do tipo Tarefa e adiconaa lista de tarefas
 const tarefa = new Tarefa('Modelar BD', 'Modelar BD Projeto A', 'A fazer', new Date())
 bdTarefas.push(tarefa)
