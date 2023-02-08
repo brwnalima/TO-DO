@@ -6,7 +6,8 @@ class usuarioController {
         app.get('/', usuarioController.listar)
         app.post('/', usuarioController.inserir)
         app.get('/email/:email', usuarioController.buscarPorEmail)
-        // /usuario
+        app.delete('/email/:email', usuarioController.deletar)
+        //usuario
     }
 
     static listar(req, res) {
@@ -26,14 +27,27 @@ class usuarioController {
         const usuario = bdUsuarios.find(usuario => usuario.email === req.params.email)
 
         // se o usuario n for encontrado, devolve um erro
-        if (!usuario) {
-            res.status(404).send("Usuário não encontrado!")
-        } else {
-            // se o usuario for encontrado, devolve o usuario
-            res.send(usuario)
+
+        !usuario ? res.status(404).send("Usuário não encontrado!") : res.send(usuario)
+
+        // se o usuario for encontrado, devolve o usuario
+    }
+
+    static deletar(req, res) {
+        // busca o email na lista de usuarios
+        const usuario = bdUsuarios.find(usuario => usuario.email === req.params.email)
+        // se o usario não for encontrado, devolve um erro
+
+        if(!usuario) {
+            res.status(404).send('Usuários não encontrado.')
         }
 
+        // se o usuario for encontrado, deleta o usuario
+        const index = bdUsuarios.indexOf(usuario)
+        bdUsuarios.splice(index, 1)
 
+        // devolve o usuário deletado
+        res.send(usuario)
     }
 }
 
