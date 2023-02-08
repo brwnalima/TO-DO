@@ -7,6 +7,7 @@ class usuarioController {
         app.post('/', usuarioController.inserir)
         app.get('/email/:email', usuarioController.buscarPorEmail)
         app.delete('/email/:email', usuarioController.deletar)
+        app.put('/email/:email', usuarioController.atualizar)
         //usuario
     }
 
@@ -36,7 +37,7 @@ class usuarioController {
         const usuario = bdUsuarios.find(usuario => usuario.email === req.params.email)
 
         // se o usario não for encontrado, devolve um erro
-        !usuario ? res.status(404).send('USUÁRIO NÃO ENCONTRADO - Verifique o endereço digitado.') : res.send(`USUÁRIO DELETADO.`)
+        !usuario ? res.status(404).send('USUÁRIO NÃO ENCONTRADO - Verifique o endereço digitado.') : ""
 
         // se o usuario for encontrado, deleta o usuario
         const index = bdUsuarios.indexOf(usuario)
@@ -44,6 +45,23 @@ class usuarioController {
 
         // devolve o usuário deletado
         res.send(usuario)
+    }
+
+    static atualizar(req, res) {
+        // busca o email na lista de usuarios
+        const usuario = bdUsuarios.find(usuario => usuario.email === req.params.email)
+
+        // se o usario não for encontrado, devolve um erro
+        !usuario ? res.status(404).send('USUÁRIO NÃO ENCONTRADO - Verifique o endereço digitado.') : ""
+
+        // se usuario for encontrado, atualiza o usuario
+        usuario.nome = (req.body.nome || usuario.nome)
+        usuario.email = (req.body.email || usuario.email)
+        usuario.senha = (req.body.senha || usuario.senha)
+        
+        //devolve o usuario atualizado
+        res.send({mensagem: `Usuário alterado com sucesso.`})
+
     }
 }
 
