@@ -1,4 +1,4 @@
-import { bdTarefas } from '../bd.js';
+import db from '../infra/db.js';
 
 class tarefaController {
     static rotas(app){
@@ -9,7 +9,7 @@ class tarefaController {
     }
 
     static listar(req, res){
-        const tarefa = bdTarefas
+        const tarefa = db
         // devolve a lista de tarefas
         res.send(tarefa)
     }

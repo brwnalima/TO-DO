@@ -1,4 +1,4 @@
-import { bdUsuarios } from '../bd.js';
+import db from '../infra/db.js';
 
 class usuarioController {
     static rotas(app) {
@@ -12,7 +12,7 @@ class usuarioController {
     }
 
     static listar(req, res) {
-        const usuario = bdUsuarios
+        const usuario = db
         // devolve a lista de usuarios
         res.send(usuario)
     }
@@ -25,7 +25,7 @@ class usuarioController {
 
     static buscarPorEmail(req, res) {
         // busca o email na lista de usuarios
-        const usuario = bdUsuarios.find(usuario => usuario.email === req.params.email)
+        const usuario = db.find(usuario => usuario.email === req.params.email)
 
         // se o usuario n for encontrado, devolve um erro
         !usuario ? res.status(404).send("USUÁRIO NÃO ENCONTRADO - Verifique o endereço digitado.") : res.send(usuario)
@@ -34,14 +34,14 @@ class usuarioController {
 
     static deletar(req, res) {
         // busca o email na lista de usuarios
-        const usuario = bdUsuarios.find(usuario => usuario.email === req.params.email)
+        const usuario = db.find(usuario => usuario.email === req.params.email)
 
         // se o usario não for encontrado, devolve um erro
         !usuario ? res.status(404).send('USUÁRIO NÃO ENCONTRADO - Verifique o endereço digitado.') : ""
 
         // se o usuario for encontrado, deleta o usuario
-        const index = bdUsuarios.indexOf(usuario)
-        bdUsuarios.splice(index, 1)
+        const index = db.indexOf(usuario)
+        db.splice(index, 1)
 
         // devolve o usuário deletado
         res.send(usuario)
@@ -49,7 +49,7 @@ class usuarioController {
 
     static atualizar(req, res) {
         // busca o email na lista de usuarios
-        const usuario = bdUsuarios.find(usuario => usuario.email === req.params.email)
+        const usuario = db.find(usuario => usuario.email === req.params.email)
 
         // se o usario não for encontrado, devolve um erro
         !usuario ? res.status(404).send('USUÁRIO NÃO ENCONTRADO - Verifique o endereço digitado.') : ""
